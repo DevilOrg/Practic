@@ -21,3 +21,10 @@
 
 en:
   hello: "Hello world"
+  auth:
+    sessions:
+      new:
+        title: "Login"
+        email: "Email"
+        password: "Password"
+        submit: "Go"

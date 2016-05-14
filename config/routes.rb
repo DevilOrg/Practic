@@ -2,6 +2,14 @@ Rails.application.routes.draw do
 
   root "public#index"
 
+  scope module: :auth do
+    get 'sign_in', to: 'sessions#new', as: :new_user_session
+    post 'sign_in', to: 'sessions#create', as: :user_session
+    get 'sign_out', to: 'sessions#destroy', as: :destroy_user_session
+  end
+
+  resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
